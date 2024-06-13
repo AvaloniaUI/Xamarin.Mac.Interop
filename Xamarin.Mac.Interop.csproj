@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-macos</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>true</ImplicitUsings>
+    <SupportedOSPlatformVersion>10.15</SupportedOSPlatformVersion>
+  </PropertyGroup>
+  <ItemGroup>
+	  <PackageReference Include="Avalonia" Version="11.2.999-cibuild0048965-alpha" />
+	  <PackageReference Include="Avalonia.Desktop" Version="11.2.999-cibuild0048965-alpha" />
+	  <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.999-cibuild0048965-alpha" />
+	  <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.999-cibuild0048965-alpha" />
+	  <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.2.999-cibuild0048965-alpha" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="App.axaml.cs">
+      <DependentUpon>App.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
